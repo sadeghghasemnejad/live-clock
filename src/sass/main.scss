@@ -1,0 +1,108 @@
+:root {
+  --color-black: #212529;
+  --color-red: #e03131;
+  --color-white: #f8f9fa;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  background-image: linear-gradient(
+    107deg,
+    var(--color-black) 50%,
+    var(--color-red) 50%
+  );
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  height: 50rem;
+  &__shape {
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    filter: blur(0.1rem);
+    opacity: 0.5;
+  }
+  &__number {
+    color: var(--color-white);
+    font-size: 3rem;
+    &--twoelve {
+      position: absolute;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--three {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+    }
+    &--six {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--nine {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
+  }
+  &__center {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.5);
+  }
+}
+.hand {
+  &__hour,
+  &__minutes,
+  &__second {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  &__hour {
+    height: 15rem;
+    width: 2rem;
+    transform: translate(-50%, -85%) rotate(0deg);
+    transform-origin: 50% 85%;
+  }
+  &__minutes {
+    height: 20rem;
+    width: 2rem;
+    transform: translate(-50%, -87%) rotate(0deg);
+    transform-origin: 50% 87%;
+  }
+  &__second {
+    transform: translate(-50%, -88%) rotate(0deg);
+    height: 20rem;
+    width: 1rem;
+    transform-origin: 50% 88%;
+  }
+}
